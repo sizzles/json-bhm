@@ -9,7 +9,7 @@ A JSON based hypermedia specification aimed at working with an entity graph, wit
 4) Domain object relationships
 
 Inspired by Siren https://github.com/kevinswiber/siren & JSON-LD http://json-ld.org/
-
+```json
 {  
    "context":{  
       "class":"invoice",
@@ -101,3 +101,4 @@ Inspired by Siren https://github.com/kevinswiber/siren & JSON-LD http://json-ld.
       }
    }
 }
+```
