@@ -9,6 +9,9 @@ A JSON based hypermedia specification aimed at working with an entity graph, wit
 4) Domain object relationships
 
 Inspired by Siren https://github.com/kevinswiber/siren & JSON-LD http://json-ld.org/
+
+## Example JSON
+
 ```json
 {  
    "context":{  
@@ -102,3 +105,27 @@ Inspired by Siren https://github.com/kevinswiber/siren & JSON-LD http://json-ld.
    }
 }
 ```
+
+## Context
+The context section is intended to provide helpful metadata about the nature of the endpoint being called.  It is a common problem that end points can change, both in their function and values they return.  If this is not communicated to consumers of the endpoints this can be problematic.  In particular it makes reasoning about a distributed system more difficult.
+
+### Class
+As with Siren, this is intended to create a class of entity / business object.  Required field.
+
+### Version
+The version of the api that has been returned by a request. Required field.
+
+### Published
+A UTC timestamp of when this api version was first made available. This should conform to the ISO-8601 specification. https://en.wikipedia.org/wiki/ISO_860 . Required field.
+
+### Author
+Name of the organisation or developer that created or maintains the api.  Intended primarily for use within internal systems, to help with identifying owernship in microservice based applications. Optional field.
+
+### Contact
+The contact email for the maintainer of the api. Optional field.
+
+### Checksums <-- Under review
+Intended to function as hashes for different content sections in the api. To help with checking the content of one api call vs another; as it is not often that an entire api response would be stored.  The exact hashing mechanism is left to the user.  Required field.
+
+### Versions
+A version history for the api, listing all versions that have been published.  It has three possible values: current, available and deprecated.  Where current is the suggested production release, available can still be called and deprecated may not work and should not be used anymore. Required field.
