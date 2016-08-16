@@ -129,3 +129,6 @@ Intended to function as hashes for different content sections in the api. To hel
 
 ### Versions
 A version history for the api, listing all versions that have been published.  It has three possible values: current, available and deprecated.  Where current is the suggested production release, available can still be called and deprecated may not work and should not be used anymore. Required field.
+
+# Properties
+Intended to be used as a key-value pair for representing entity properties. Can be used to create complex types. Values are optional, however an empty array is required.
