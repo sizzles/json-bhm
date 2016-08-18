@@ -9,6 +9,7 @@ A JSON based hypermedia specification aimed at working with an entity graph, wit
 4) Domain object relationships
 
 Inspired by Siren https://github.com/kevinswiber/siren & JSON-LD http://json-ld.org/
+Unlike these specifications, the links section has been removed.  This is to prevent mixing relationships between business objects with operational relation ships.  For example, including a pagination href in the links section.  Instead this would be as part of the a different graph or view.  To try and keep the object graph separate from how the presentation of the data in it is implemented.  
 
 ## Example JSON
 
@@ -132,3 +133,14 @@ A version history for the api, listing all versions that have been published.  I
 
 # Properties
 Intended to be used as a key-value pair for representing entity properties. Can be used to create complex types. Values are optional, however an empty array is required.
+
+# Entities
+An array of entities (ie nodes) that are related to the main object.  Can be considered sub entities. The array is mandatory, but can be left empty.
+
+### Class
+An array of strings describing the class of business objects this entity belongs to.
+
+### Rel
+Array of strings, describing the relations between the parent object and the entity. Mandatory to have at least one relation in the array. Can for example be used to create a 'self' link, by creating a rel of 'link-self'.
+
+###
