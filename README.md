@@ -143,4 +143,8 @@ An array of strings describing the class of business objects this entity belongs
 ### Rel
 Array of strings, describing the relations between the parent object and the entity. Mandatory to have at least one relation in the array. Can for example be used to create a 'self' link, by creating a rel of 'link-self'.
 
-###
+### Path
+The url that can be used to reach the entity directly.
+
+### Properties
+A key value pair storage, like the properties object on the outer entity. Can be used as part of a 'summary' of an entity, so that detail can be retrieved without getting a full subentity. This would be useful if you have a large list of entities and don't want to make individual calls to get a piece of information from each.
