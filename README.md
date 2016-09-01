@@ -148,3 +148,6 @@ The url that can be used to reach the entity directly.
 
 ### Properties
 A key value pair storage, like the properties object on the outer entity. Can be used as part of a 'summary' of an entity, so that detail can be retrieved without getting a full subentity. This would be useful if you have a large list of entities and don't want to make individual calls to get a piece of information from each.
+
+# Operations
+These represent actions that can be performed on the current entity. For example, delete, patch or put.  There can be some variation in implementation; regarding whether operations unavailable for certain users (eg. read only accounts) are able to see or invoke these actions.  Or if they are able to invoke them, then the response that should be received from the server eg. 403.
